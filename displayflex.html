@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Flex</title>
+
+    <style>
+        section{
+            width: 500px;
+            height: 500px;
+        }
+
+        .a {
+            width: 500px;
+            height: 51px;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: row;
+            background-color: white;
+            margin-bottom: 2px;
+        }
+
+        .b {
+            width: 500px;
+            height: 51px;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: row-reverse; /*terbalik */
+            background-color: white;
+            margin-bottom: 2px;
+        }
+
+        .c {
+            width: 500px;
+            height: auto;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column; 
+            background-color: white;
+            margin-bottom: 2px;
+        }
+
+        .d {
+            width: 200px;
+            height: auto;
+            border: 1px solid black;
+            display: flex;
+            flex-wrap: wrap; /*lebar tidak muat kotak turun ke bawah */
+            background-color: white;
+            margin-bottom: 2px;
+        }
+
+        .e {
+            width: 500px;
+            height: 51px;
+            border: 1px solid black;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: flex-end; /*div geser ke kanan */
+            background-color: white;
+            margin-bottom: 2px;
+        }
+
+        .f {
+            width: 500px;
+            height: 51px;
+            border: 1px solid black;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center; /*div geser ke tengah */
+            background-color: white;
+            margin-bottom: 2px;
+        }
+
+        .f {
+            width: 500px;
+            height: 51px;
+            border: 1px solid black;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-around; /*div geser ke tengah */
+            background-color: white;
+            margin-bottom: 2px;
+        }
+
+        .g {
+            width: 500px;
+            height: 51px;
+            border: 1px solid black;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between; /*div geser ke tengah */
+            background-color: white;
+            margin-bottom: 2px;
+        }
+
+        .h {
+            width: 500px;
+            height: 51px;
+            border: 1px solid black;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-evenly; /*div geser ke tengah */
+            background-color: white;
+            margin-bottom: 2px;
+        }
+        
+        .i {
+            width: 255px;
+            height: 150px;
+            border: 1px solid black;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-evenly; /*div geser ke atas */
+            align-items: flex-start;
+            background-color: white;
+            margin-bottom: 2px;
+        }
+        
+        .j {
+            width: 255px;
+            height: 150px;
+            border: 1px solid black;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-evenly; /*div geser ke kebawah */
+            align-items: flex-end;
+            background-color: white;
+            margin-bottom: 2px;
+        }
+
+        .k {
+            width: 500px;
+            height: 150px;
+            border: 1px solid black;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-evenly; /*div geser ke tengah */
+            align-items: center;
+            background-color: white;
+            margin-bottom: 2px;
+        }
+
+        .l {
+            width: 500px;
+            height: 150px;
+            border: 1px solid black;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-evenly; /*div geser ke tengah */
+            align-items: stretch;
+            background-color: white;
+            margin-bottom: 2px;
+        }
+
+        div{
+            width: 50px;
+            height: 50px;
+            background-color: yellowgreen;
+            border: 1px solid black;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Display Flex</h1>
+    <section>
+        flex
+        <div class="a">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </div>
+        row-reverse
+        <div class="b">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </div>
+        column
+        <div class="c">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </div>
+        wrap
+        <div class="d">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </div>
+        flex-end
+       <div class="e">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </div>
+        center
+        <div class="f">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </div>
+        space-around
+        <div class="g">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </div>
+        space-beetwen
+        <div class="g">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </div>
+        space-evenly
+        <div class="h">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </div>
+        align-item:flex-start
+        <div class="i">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </div>
+        align-item:flex-end
+        <div class="j">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </div>
+        space-evenly & center
+        <div class="k">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </div>
+        stretch tanpa atribut height
+        <div class="l">
+            <div  style=" height:auto;">1</div>
+            <div  style=" height:auto ;">2</div>
+            <div  style=" height:auto ;">3</div>
+            <div  style=" height:auto ;">4</div>
+            <div  style=" height:auto ;">5</div>
+        </div>
+    </section>
+
+</body>
+</html>

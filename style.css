@@ -1,0 +1,432 @@
+*{
+    font-family: Montserrat;
+    box-sizing: border-box; /*padding dan margin dihitung ke dalam lebar tinggi sebuah element supaya tidak over*/
+    scroll-behavior: smooth;
+}
+
+html, body{ /*sebaiknya sebelum coding margin dan padding buat 0 karna ada defaultnya*/
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-weight: 800px; /*membuat ketebalan hurus*/
+    font-size: 48px;
+    margin: 0 0 16px 0;
+}
+
+a {
+    text-decoration: none; /*menghilangkan underline*/
+    color: black;
+    font-size: 24px;
+}
+
+p {
+    color: #979797;
+    margin: 0 0 20px 0;
+    font-size: 24;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+}
+
+section{
+    padding: 55px 128px;
+}
+
+.btn {
+    background-color: #fac105;
+    color: white;
+    border: 1px solid #fac105;
+    padding: 8px 24px;
+}
+
+.btn-alt {
+    background-color: white;
+    color: black;
+    border: 1px solid #fac105;
+    padding: 8px 24px;
+    margin-left: 15px;
+}
+
+.header, .footer{
+    z-index: 10;
+}
+
+.header{
+    display: flex;
+    align-items: center; /*mengatur jarak vertikal */
+    justify-content: space-between; /*mengatur jarak harizontal */
+    padding: 16px 128px;
+    position: sticky; /*header stack saat di scroll*/
+    top: 0px;
+    background-color: white;
+}
+
+
+header h1{
+    margin: 0; /*karna bawaan H1 ada margin jadi di value margin dibuat 0*/
+    animation: bounceIn 1.5s ; /*panggilan animasi dan running*/
+}
+
+@keyframes bounceIn{ /*create animation*/
+    0% {
+        opacity: (0);
+        transform: translateY(-20px);
+    }
+    35% {
+        opacity: (0.25);
+        transform: translateY(0px);
+    }
+    75% {
+        opacity: (0.5);
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: (1);
+        transform: translateY(0px);
+    }
+}
+
+.landing{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 20px; /*memberi jarak pada columns*/
+}
+
+.landing p {
+    margin-bottom: 32px;
+}
+
+nav > a{ /*nav yg anaknya a saja */
+    color: black;
+    margin-right: 20px;
+} 
+
+nav > a:hover {
+color: #fac105;
+}
+
+.landing > div{
+    width: 50%;
+}
+
+.about{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 20px;
+}
+
+.about > div{
+    width: 50%;
+}
+
+.about-content{
+    display: grid;
+    grid-template-columns:repeat(3, 1fr) ;
+    text-align: center;
+}
+
+.about-item{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.about-item-line{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-item-line>div{
+    width: 50px;
+    height: 10px;
+    background-color: #fac105;
+    margin-bottom: 16px;
+}
+
+.about-item-line>p{
+    font-size: 30px;
+    color: black;
+}
+
+.service-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.service-header h1 {
+    position: relative;
+}
+
+.service-header h1::before {
+    content: ""; /*untuk menampilkan gambar karena pakai ::before*/
+    width: 60px;
+    height: 60px;
+    background: url(Images/accent1.svg);
+    position: absolute;
+    left: -20px;
+    top: -10px;
+    z-index: -1; /*tampil dibelakang object*/
+}
+
+.service-detail{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    margin-top: 75px ;
+}
+
+.service-detail div{
+ box-shadow: 2px 4px 4px rgba(1, 2, 3, 10);
+}
+
+.service-detail-item:hover{ /*event ketika di klik*/
+    transform: scale(1.1); /*gambar zoom in*/
+}
+
+.service-detail-item:hover img{ 
+    filter: grayscale(0); /*img diklick warna berwarna kembali*/
+}
+
+.service-detail>div>h2{
+    padding: 0 16px;
+    text-align: center;
+}
+
+.service-detail>div>img{ /*img berada di tengah container div*/
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: min-content;
+    height: min-content;
+    filter: grayscale(1); /*filter hitam putih*/
+}
+
+
+.service-detail>div>p{
+    padding: 0 16px;
+    text-align: justify;
+}
+
+.contact{
+    margin-bottom: 10px;
+}
+
+.contact h1{
+    position: relative;    
+}
+
+.contact > h1::before{ /*pakai > karena h1 ada banyak*/
+    content: "";
+    width: 60px;
+    height: 60px;
+    background: url(./Images/accent2.svg);
+    left: -20px;
+    top: -10px;
+    z-index: -1;
+    position: absolute;    
+}
+
+.contact-detail{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    column-gap: 20px;
+}
+
+.contact-group{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+    margin-top: 30px;
+    grid-template-areas: 
+    "name subject" 
+    "email phone" 
+    "message message"; 
+} 
+
+/*mendeklarasi setiap element input*/
+#input-name {
+    grid-area: name;
+}
+#input-subject {
+    grid-area: subject;
+}
+#input-email {
+    grid-area: email;
+}
+#input-phone {
+    grid-area: phone;
+}
+#input-message {
+    grid-area: message;
+}
+
+
+.contact-group>div{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+}
+
+.contact-group>div>label{
+  font-weight: 800;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.contact-group>div>input{
+    border: none; /*menghilangka border pada input*/
+    outline: none; /*menghilangka border saat di klik*/
+    border-bottom: 1px solid black;
+    font-size: 20px;
+}
+
+.contact-group>div>input:focus{
+    border-bottom: 2px solid #fac105;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #fac105;
+    padding: 32px 16px;
+}
+
+form > button:hover{
+    cursor: pointer;
+}
+
+form h1 {
+    font-size: 40px;
+    text-align: center;
+}
+
+.title-location{
+    font-size: 40px;
+    text-align: center;
+}
+
+footer{
+    padding: 16px 128px;
+    background-color: #fac105;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer p {
+    color: white;
+}
+
+footer>div>img{
+    height: min-content;
+    width: min-content;
+}
+
+@media only screen and (max-width: 992px){
+
+/*  ##tester##
+html, body { 
+    background-color: red;
+} */
+
+    .header, .footer{
+        padding: 16px 32px;
+        z-index: 10;
+    }
+
+     .landing-a{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0%;
+     }
+
+     .btn {
+        background-color: #fac105;
+        color: white;
+        border: 1px solid #fac105;
+        padding: 8px 24px;
+        margin-bottom: 20px;
+    }
+    
+    .btn-alt {
+        background-color: white;
+        color: black;
+        border: 1px solid #fac105;
+        padding: 8px 24px;
+        margin: 20px 0%;
+    }
+
+    section{
+        padding: 64px 32px;
+    }
+
+    .landing{
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .landing > div { /*width gambar kembali ke 100%*/
+        width: 100%; 
+    }
+
+    .about{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .about > div { /*width gambar kembali ke 100%*/
+        width: 100%;
+    }
+
+    .service-detail{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .service-header h1::before {
+        content: ""; /*untuk menampilkan gambar karena pakai ::before*/
+        width: 60px;
+        height: 60px;
+        background: url(Images/accent1.svg);
+        position: absolute;
+        left: -20px;
+        top: -10px;
+        z-index: -1; /*tampil dibelakang object*/
+    }
+                    
+    .service-detail div{
+    box-shadow: 2px 4px 4px rgba(1, 2, 3, 10);
+    margin-bottom: 30px;
+    width: 75%;
+    height: 75%;
+    }
+
+    .contact-detail{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    iframe {
+        width: 500px;
+        height: 500px;
+    }
+    
+}

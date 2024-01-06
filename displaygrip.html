@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+        section{
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+        }
+
+        .a{
+            width: 100%;
+            height: 250px;
+            display: grid;
+        }
+
+        .b{
+            width: 100%;
+            height: 250px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+        }
+
+        .c{
+            width: 100%;
+            height: 250px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            grid-template-rows: 1fr 3fr 2fr;
+        }
+
+        .d{
+            width: 100%;
+            height: 250px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 1fr 3fr 2fr;
+            grid-template-areas: 
+            "satu dua"
+            "tiga tiga"
+            "empat lima"
+            ;
+        }
+        #satu{
+            grid-area: satu;
+        }
+        #dua{
+            grid-area: dua;
+        }
+        #tiga{
+            grid-area: tiga;
+        }
+        #empat{
+            grid-area: empat;
+        }
+        #lima{
+            grid-area: lima;
+        }
+
+        div{
+            background-color: yellowgreen;
+            border: 1px solid black;
+        }
+</style>
+
+</head>
+<body>
+    <h1>Display Grip</h1>
+    <section>
+        Display Grip
+        <div class="a">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </div>
+
+        grid-template-columns:[ 1fr 2fr; atau repeat(2,1fr)] ; column perbandingan 1:2
+        <div class="b">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </div>
+
+        grid-template-rows: 1fr 3fr 2fr; row perbandingan 1:3:2
+        <div class="c">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </div>
+
+        grid-template-areas: "satu dua" "tiga tiga" "empat lima";
+        <div class="d">
+            <div id="satu">1</div>
+            <div id="dua">2</div>
+            <div id="tiga">3</div>
+            <div id="empat">4</div>
+            <div id="lima">5</div>
+        </div>
+    </section>
+</body>
+</html>
